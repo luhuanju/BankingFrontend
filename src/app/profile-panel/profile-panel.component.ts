@@ -17,7 +17,7 @@ export class ProfilePanelComponent {
     { value: 'View Statement', label: 'View Statement' },
 
   ];
-  selectedValue: string | null = null;
+  selectedValue: string | null = 'Account List';
 
 
   @Output() buttonClick = new EventEmitter<string>();

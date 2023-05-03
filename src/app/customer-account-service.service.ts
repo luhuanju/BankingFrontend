@@ -5,11 +5,13 @@ import { CustomerAccount } from './CustomersAccount';
 
 @Injectable({
   providedIn: 'root'
+
+
 })
-export class CustomerAccountServiceService {
+export class CustomerAccountService {
 
   customerID = 100
-  private apiUrl = 'http://127.0.0.1:8080//api/customer/customerID/acocunt'
+  private apiUrl = 'http://127.0.0.1:8080//api/customer/100/acocunt'
 
   constructor(private http: HttpClient) { }
 
