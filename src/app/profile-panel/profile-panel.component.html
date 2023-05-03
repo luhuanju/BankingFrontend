@@ -1,0 +1,20 @@
+<div class="parent-div">
+    <div class="child-div">
+        <div class="button-group">
+            <button
+              *ngFor="let button of buttons"
+              [class.active]="selectedValue === button.value"
+              (click)="onButtonClick(button.value)"
+            >
+              {{ button.label }}
+            </button>
+          </div>
+    </div>
+    <div class="child-div">
+        <div class="col-9">
+            <app-account-list *ngIf="selectedValue === 'Account List'"></app-account-list>
+            <app-create-account *ngIf="selectedValue === 'Create Account'"></app-create-account>
+            <app-add-beneficiary *ngIf="selectedValue === 'Add Beneficiary'"></app-add-beneficiary>
+          </div>
+    </div>
+  </div>  

@@ -1,0 +1,35 @@
+.button-group {
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+  }
+  
+  button {
+    background-color: #f1f1f1;
+    border: none;
+    color: black;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  
+  button.active {
+    background-color: #2c2f2c;
+    color: white;
+  }
+  
+  .parent-div {
+    display: flex;
+  }
+  
+  .child-div {
+    width: 300px; /* or any other desired width */
+    box-sizing: border-box; /* includes padding and border in width */
+  }
