@@ -13,6 +13,6 @@ export class AdminService {
   constructor(private http: HttpClient) { }
 
   createStaff(staff: Staff): Observable<any> {
-    return this.http.post(`${this.apiURL}`, staff);
+    return this.http.post<any[]>('api/admin/staff', staff);
   }
 }
