@@ -1,7 +1,8 @@
-<p>account-list works1111!</p>
-<div *ngFor="let row of rows">
-    <div>{{ row.customerId }}</div>
-    <!-- <div>{{ row.column2 }}</div>
-    <div>{{ row.column3 }}</div> -->
+<div *ngFor="let row of rows" class=" item">
+    <div class="border">
+        <!-- <div class="text-normal">Account Type: {{ row.accountType}}</div> -->
+        <div class="text-normal">Account Type: SB</div>
+        <div class="text-normal">Account Balance: {{ row.accountBalance }}</div>
+    </div>
 </div>
-<!-- <button [disabled]="isDisabled">Disable/Enable</button> -->
+

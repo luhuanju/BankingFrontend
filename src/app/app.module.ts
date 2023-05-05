@@ -8,6 +8,8 @@ import { ProfilePanelComponent } from './profile-panel/profile-panel.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { AddBeneficiaryComponent } from './add-beneficiary/add-beneficiary.component';
 import { AccountListComponent } from './account-list/account-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DeleteBeneficiaryComponent } from './delete-beneficiary/delete-beneficiary.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,14 @@ import { AccountListComponent } from './account-list/account-list.component';
     ProfilePanelComponent,
     AccountListComponent,
     CreateAccountComponent,
-    AddBeneficiaryComponent
+    AddBeneficiaryComponent,
+    DeleteBeneficiaryComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
