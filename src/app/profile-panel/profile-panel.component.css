@@ -1,10 +1,12 @@
 .button-group {
     display: flex;
     width: 300px;
+    
     flex-direction: column;
   }
   
   button {
+    height: 70px;
     background-color: #f1f1f1;
     border: none;
     color: black;
@@ -26,6 +28,7 @@
   }
   
   .parent-div {
+    height: 500px;
     display: flex;
   }
   

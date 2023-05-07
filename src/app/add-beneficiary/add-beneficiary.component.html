@@ -1,1 +1,54 @@
-<p>add-beneficiary works!</p>
+<div class="form-container">
+    <h2 class="form-subtitle">Add Beneficiary</h2>
+    <form (ngSubmit)="onSubmit()" #accountForm="ngForm">
+      <div class="form-group">
+        <!-- <label for="accountNumber">Account Number:</label> -->
+        <input type="text" id="accountNumber" name="accountNumber" class="form-control" [(ngModel)]="accountNumber" placeholder="Enter account number" required>
+      </div>
+      <div class="form-group">
+        <!-- <label for="confirmAccountNumber">Confirm Account Number:</label> -->
+        <input type="text" id="confirmAccountNumber" name="confirmAccountNumber" class="form-control" [(ngModel)]="confirmAccountNumber" placeholder="Confirm account number" required>
+        <div *ngIf="accountForm.submitted && accountForm.controls['confirmAccountNumber'].errors?.['mismatch']">
+          Account numbers do not match
+        </div>
+      </div>
+      <h2 class="form-subtitle">Select Type Of Account</h2>
+      <div class="form-group">
+        <div class="radio-buttons">
+          <div class="radio-button">
+            <input type="radio" id="creditCard" name="paymentMethod" value="creditCard" [(ngModel)]="paymentMethod" required>
+            <label for="creditCard">Saving Account</label>
+          </div>
+          <div class="radio-button">
+            <input type="radio" id="bankTransfer" name="paymentMethod" value="bankTransfer" [(ngModel)]="paymentMethod" required>
+            <label for="bankTransfer">Current Account</label>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+  </div>
+  
+
+<!-- <div class="border">
+    <div class="text-line">Form Title</div>
+    <div>
+      <label for="input1">Input 1:</label>
+      <input id="input1" type="text" [(ngModel)]="input1" name="input1" required>
+    </div>
+    <div>
+      <label for="input2">Confirm Input:</label>
+      <input id="input2" type="text" [(ngModel)]="input2" name="input2" required>
+      <div *ngIf="input2 !== input1" class="error">Inputs do not match!</div>
+    </div>
+    <div class="text-line">Text Line 2</div>
+    <div>
+      <label for="select1">Select:</label>
+      <select id="select1" [(ngModel)]="select1" name="select1">
+        <option value="option1">Option 1</option>
+        <option value="option2">Option 2</option>
+      </select>
+    </div>
+    <button type="submit" (click)="submitForm()">Submit</button>
+  </div>
+   -->

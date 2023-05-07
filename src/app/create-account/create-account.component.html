@@ -1,1 +1,17 @@
-<p>create-account works!</p>
+
+<div class="border">
+    <div class="text-line">Create Account Form</div>
+    <form (ngSubmit)="onSubmit()">
+      <input type="number" [(ngModel)]="number" name="number" required>
+      <div *ngIf="number === 0 || number === null" class="error">Please enter a number</div>
+      <div class="account-line">Select Type Of Account</div>
+      <div class="select-line">
+        <label for="choice">Choose a value:  </label>
+        <select id="choice" name="choice" [(ngModel)]="choice">
+          <option value="CA">Current Account</option>
+          <option value="SB">Savings Bank</option>
+        </select>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>

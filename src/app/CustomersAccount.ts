@@ -8,6 +8,15 @@ export class CustomerAccount {
     ) {}
 }
 export enum AccountType {
-    BA = 'BA',
+    SB = 'BA',
     CA = 'CA'
 }  
+export class BeneficiaryAccount {
+  constructor(
+    public id: number,
+    public customerId: number,
+    public accountNumber: string,
+    public accountType: AccountType,
+    public approved: string,
+  ) {}
+}

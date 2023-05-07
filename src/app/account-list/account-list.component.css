@@ -1,0 +1,17 @@
+.item {
+    width: 300px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .border {
+    border: 1px solid rgb(74, 70, 70);
+    padding: 10px;
+  }
+  .text-normal {
+    font-size: 15px;
+  }
+
+  .text-small {
+    font-size: 12px;
+  }

@@ -1,0 +1,52 @@
+.border {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 330px;
+    border: 1px solid black;
+    padding: 10px;
+    display: flex;
+    /* width: 300px; */
+    flex-direction: column;
+    align-items: center;
+  }
+  .account-line{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  .text-line {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  input[type="number"] {
+    font-size: 16px;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+  }
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center;
+  }
+  .select-line {
+    margin-top: 10px;
+  }
+  label {
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  select {
+    font-size: 16px;
+    padding: 5px;
+  }
+  button[type="submit"] {
+    margin-top: 10px;
+  }
+  
