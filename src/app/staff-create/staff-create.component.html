@@ -1,5 +1,7 @@
 <div class="container">
-    <h1>Create Staff</h1>
+    <button routerLink="/create_staff">Create stuff</button>
+    <button routerLink="/view_staffs">View stuffs</button>
+
     <form [formGroup]="staffForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="name">Staff Name</label>
