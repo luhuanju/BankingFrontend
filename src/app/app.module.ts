@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,18 @@ import { AddBeneficiaryComponent } from './add-beneficiary/add-beneficiary.compo
 import { AccountListComponent } from './account-list/account-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteBeneficiaryComponent } from './delete-beneficiary/delete-beneficiary.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile', component: ProfilePanelComponent },
+];
+
 
 @NgModule({
   declarations: [
@@ -18,13 +30,19 @@ import { DeleteBeneficiaryComponent } from './delete-beneficiary/delete-benefici
     AccountListComponent,
     CreateAccountComponent,
     AddBeneficiaryComponent,
-    DeleteBeneficiaryComponent
+    DeleteBeneficiaryComponent,
+    HeaderComponent,
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
