@@ -18,6 +18,9 @@
               <form class="login-form" [formGroup]="profileForm" (ngSubmit)="login()">
                 <input type="text" placeholder="username" formControlName="username"/>
                 <input type="password" placeholder="password" formControlName="password"/>
+                <div *ngIf="showMessage">
+                    Account information not found! 
+                 </div>
                 <button type="submit">Login</button>
                 <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
               </form>
@@ -25,8 +28,6 @@
           </div>
         </div>
         
-          <div *ngIf="showMessage">
-             Content to show when expression is true
-          </div>
+         
   </div>
   
