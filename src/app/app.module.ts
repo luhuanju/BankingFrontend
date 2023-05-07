@@ -15,12 +15,15 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
+import { StaffComponent } from './staff/staff.component';
+import { StaffCreateComponent } from './staff-create/staff-create.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfilePanelComponent },
 ];
+
 
 
 @NgModule({
@@ -35,14 +38,18 @@ const routes: Routes = [
     FooterComponent,
     LoginComponent,
     RegisterComponent,
+    StaffComponent,
+    StaffCreateComponent,
   ],
   imports: [
     ReactiveFormsModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(routes)
+
   ],
   providers: [],
   bootstrap: [AppComponent]
