@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Staff } from '../staff/staff.model';
+import { Staff } from './staff.model';
 import { AdminService } from './admin.service';
 
 @Component({

@@ -1,0 +1,25 @@
+<div class="container">
+<button routerLink="/create_staff">Create stuff</button>
+<button routerLink="/view_staffs">View stuffs</button>
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Login Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let staff of staffList">
+        <td>{{staff.staffFullName}}</td>
+        <td>{{staff.staffUserName}}</td>
+        <td>
+          <label class="switch">
+            <input type="checkbox" [checked]="staff.status === 'ENABLED'" (change)="toggleLoginStatus(staff)">
+            <span class="slider"></span>
+          </label>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

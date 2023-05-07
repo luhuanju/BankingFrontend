@@ -15,13 +15,15 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
-import { StaffComponent } from './staff/staff.component';
 import { StaffCreateComponent } from './staff-create/staff-create.component';
+import { StaffListComponent } from './staff-list/staff-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfilePanelComponent },
+  { path: 'create_staff', component: StaffCreateComponent },
+  { path: 'view_staffs', component: StaffListComponent },
 ];
 
 
@@ -38,8 +40,8 @@ const routes: Routes = [
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    StaffComponent,
     StaffCreateComponent,
+    StaffListComponent,
   ],
   imports: [
     ReactiveFormsModule,
