@@ -4,6 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Customer } from '../Customer';
 import { User } from '../User';
+import { UserServiceService } from '../user-service.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  constructor(private router: Router, private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpClient, private userService: UserServiceService) {}
 
   get f(){
     return this.profileForm.controls;
@@ -39,6 +40,8 @@ export class LoginComponent implements OnInit {
       if(result==null){
         this.showMessage=true;
       }else{
+        this.userService.setCurrentUser(result)
+        console.log(this.userService.getCurrentUser()['customerId'])
         this.router.navigate(['profile']);
       }
     });
