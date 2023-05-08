@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CustomerAccountService } from '../customer-account-service.service';
 import { BeneficiaryAccount } from '../CustomersAccount';
 
