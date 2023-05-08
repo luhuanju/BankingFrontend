@@ -1,4 +1,5 @@
-import { Component,Input, Output, EventEmitter } from '@angular/core';
+import { Component,Input, Output, EventEmitter, ViewChild,ElementRef } from '@angular/core';
+import { CreateAccountComponent } from '../create-account/create-account.component';
 interface Button {
   value: string;
   label: string;
@@ -19,6 +20,11 @@ export class ProfilePanelComponent {
   ];
   selectedValue: string | null = 'Account List';
 
+  onSelectedValueChange(value: string) {
+    console.log('change')
+    this.selectedValue = value;
+    this.buttonClick.emit(value);
+  }
 
   @Output() buttonClick = new EventEmitter<string>();
 
