@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
 import { StaffCreateComponent } from './staff-create/staff-create.component';
 import { StaffListComponent } from './staff-list/staff-list.component';
+import { BeneficiaryListComponent } from './beneficiary-list/beneficiary-list.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfilePanelComponent },
   { path: 'create_staff', component: StaffCreateComponent },
   { path: 'view_staffs', component: StaffListComponent },
+  { path: 'approve_beneficiary', component: BeneficiaryListComponent },
 ];
 
 
@@ -42,6 +44,7 @@ const routes: Routes = [
     RegisterComponent,
     StaffCreateComponent,
     StaffListComponent,
+    BeneficiaryListComponent,
   ],
   imports: [
     ReactiveFormsModule,

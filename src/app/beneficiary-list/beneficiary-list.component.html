@@ -1,0 +1,23 @@
+<h2>Beneficiary List</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Account Number</th>
+      <th>Bank Name</th>
+      <th>Approval Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let beneficiary of beneficiaries">
+      <td>{{ beneficiary.fromCustomer }}</td>
+      <td>{{ beneficiary.beneficiaryAcNo }}</td>
+      <td>{{ beneficiary.beneficiaryAddedDate }}</td>
+      <td>
+        <button *ngIf="beneficiary.approved!='YES'" (click)="onApproveBeneficiary(beneficiary)">Approve Beneficiary</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
