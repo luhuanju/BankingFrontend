@@ -18,6 +18,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StaffCreateComponent } from './staff-create/staff-create.component';
 import { StaffListComponent } from './staff-list/staff-list.component';
 import { BeneficiaryListComponent } from './beneficiary-list/beneficiary-list.component';
+import { StaffloginComponent } from './stafflogin/stafflogin.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -45,6 +46,7 @@ const routes: Routes = [
     StaffCreateComponent,
     StaffListComponent,
     BeneficiaryListComponent,
+    StaffloginComponent,
   ],
   imports: [
     ReactiveFormsModule,
