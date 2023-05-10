@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'create_staff', component: StaffCreateComponent },
   { path: 'view_staffs', component: StaffListComponent },
   { path: 'approve_beneficiary', component: BeneficiaryListComponent },
+  { path: 'staff_login', component: StaffloginComponent  },
 ];
 
 

@@ -1,1 +1,32 @@
-<p>stafflogin works!</p>
+<div class="login-container">
+    <div class="login-left">
+      <div class="login-info">
+      </div>
+    </div>
+    <div *ngIf="mainbody">
+        <div class="login-page">
+            <div class="form">
+              <p>Staff Login</p>
+              <form class="register-form">
+                <input type="text" placeholder="name"/>
+                <input type="password" placeholder="password"/>
+                <input type="text" placeholder="email address"/>
+                <button>create</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+              </form>
+              <form class="login-form" [formGroup]="profileForm" (ngSubmit)="login()">
+                <input type="text" placeholder="username" formControlName="username"/>
+                <input type="password" placeholder="password" formControlName="password"/>
+                <div *ngIf="showMessage">
+                    Account information not found! 
+                 </div>
+                <button type="submit">Login</button>
+                <p class="message">Not registered? <a routerLink="/register">Create an account</a></p>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+         
+  </div>
+  
