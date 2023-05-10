@@ -1,0 +1,28 @@
+.container {
+    width: 70%;
+    margin: 0 auto;
+  }
+  
+  .tab {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .tab li {
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+  }
+  
+  .tab li.active {
+    border-color: black;
+  }
+  
+  .tab-content {
+    border: 1px solid black;
+    padding: 20px;
+  }
+  
