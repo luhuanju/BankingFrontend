@@ -22,6 +22,19 @@ export class UserServiceService {
     } 
   }
 
+
+  public setCurrentStaff(staff: any) {
+    localStorage.setItem('currentStaff', JSON.stringify(staff));
+  }
+
+  public getCurrentStaff() {
+    const customer = localStorage.getItem('currentStaff')
+    if(customer!==null) {
+       const obj= JSON.parse(customer);
+       return obj;
+    } 
+  }
+
   public clearCurrentUser() {
     localStorage.removeItem('currentUser');
   }
