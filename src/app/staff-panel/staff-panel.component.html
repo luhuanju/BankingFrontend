@@ -1,6 +1,6 @@
 <div class="container">
     <ul class="tab">
-      <li [class.active]="selectedTab === 1" (click)="selectTab(1)">By Account Number</li>
+      <!-- <li [class.active]="selectedTab === 1" (click)="selectTab(1)">By Account Number</li> -->
       <li [class.active]="selectedTab === 2" (click)="selectTab(2)">Approve Beneficiary</li>
       <li [class.active]="selectedTab === 3" (click)="selectTab(3)">Approve Account</li>
       <li [class.active]="selectedTab === 4" (click)="selectTab(4)">Ebable/Block Customer</li>
@@ -8,6 +8,8 @@
     <div class="child-div">
         <div class="col-9">
             <app-beneficiary-list *ngIf="selectedTab === 2"></app-beneficiary-list>
+            <app-approve-account *ngIf="selectedTab === 3"></app-approve-account>
+
             <app-block-enable-customer *ngIf="selectedTab === 4"></app-block-enable-customer>
             <!-- <app-create-account *ngIf="selectedValue === 'Create Account'"
             (changeSelectedValue)="onSelectedValueChange($event)"></app-create-account>

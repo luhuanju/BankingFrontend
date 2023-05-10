@@ -7,6 +7,19 @@ export class CustomerAccount {
       public accountType: AccountType,
     ) {}
 }
+
+export class Account {
+ 
+  accountId:number;
+  accountNumber: number;
+  accountType: string;
+  accountBalance: AccountType;
+  approved:string;
+  dateOfCreation:Date;
+  customerId:any;
+  transaction:any
+}
+
 export enum AccountType {
     SB = 'SB',
     CA = 'CA'
