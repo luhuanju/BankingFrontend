@@ -40,7 +40,7 @@ export class StaffloginComponent implements OnInit  {
         this.showMessage=true;
       }else{
         this.userService.setCurrentStaff(result)
-        this.router.navigate(['approve_beneficiary']);
+        this.router.navigate(['staff_panel']);
       }
     });
 

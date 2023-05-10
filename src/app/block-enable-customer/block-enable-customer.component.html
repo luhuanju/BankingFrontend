@@ -1,18 +1,18 @@
 <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Status</th>
+        <th>Customer Name</th>
+        <th>Customer Id</th>
+        <th>Enable Disable </th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.customerId }}</td>
         <td>
-          <button class="status" [class.enabled]="user.enabled" (click)="toggleEnabled(user)">
-            {{ user.enabled ? 'Enabled' : 'Disabled' }}
+          <button class="status" [class.enabled]="user.status" (click)="toggleEnabled(user)">
+            {{ user.status ? 'Disabled' : 'Enabled' }}
           </button>
         </td>
       </tr>
