@@ -41,7 +41,7 @@ export class StaffloginComponent implements OnInit  {
       }else{
         this.userService.setCurrentStaff(result)
         this.router.navigate(['staff_panel']);
-      }
+      } 
     });
 
 }

@@ -1,0 +1,23 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Account Number</th>
+        <th>Account Id</th>
+        <th>Account Creation Time </th>
+        <th>Enable Disable </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.accountNumber}}</td>
+        <td>{{ user.accountId }}</td>
+        <td>{{ user.dateOfCreation}}</td>
+        <td>
+          <button class="status" [class.enabled]="user.approved" (click)="toggleEnabled(user)">
+            {{ user.approved==='No' ? 'Disabled' : 'Enabled' }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

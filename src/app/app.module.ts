@@ -21,6 +21,7 @@ import { BeneficiaryListComponent } from './beneficiary-list/beneficiary-list.co
 import { StaffloginComponent } from './stafflogin/stafflogin.component';
 import { StaffPanelComponent } from './staff-panel/staff-panel.component';
 import { BlockEnableCustomerComponent } from './block-enable-customer/block-enable-customer.component';
+import { ApproveAccountComponent } from './approve-account/approve-account.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -54,6 +55,7 @@ const routes: Routes = [
     StaffloginComponent,
     StaffPanelComponent,
     BlockEnableCustomerComponent,
+    ApproveAccountComponent,
   ],
   imports: [
     ReactiveFormsModule,
