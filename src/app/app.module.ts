@@ -19,6 +19,8 @@ import { StaffCreateComponent } from './staff-create/staff-create.component';
 import { StaffListComponent } from './staff-list/staff-list.component';
 import { BeneficiaryListComponent } from './beneficiary-list/beneficiary-list.component';
 import { StaffloginComponent } from './stafflogin/stafflogin.component';
+import { StaffPanelComponent } from './staff-panel/staff-panel.component';
+import { BlockEnableCustomerComponent } from './block-enable-customer/block-enable-customer.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -48,6 +50,8 @@ const routes: Routes = [
     StaffListComponent,
     BeneficiaryListComponent,
     StaffloginComponent,
+    StaffPanelComponent,
+    BlockEnableCustomerComponent,
   ],
   imports: [
     ReactiveFormsModule,
