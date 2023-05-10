@@ -7,4 +7,9 @@ export class Customer {
     identityID:any;
     secretQuestion:any;
     secretAnswer:any;
+    status:boolean;
 }
+export enum CustomerStatus {
+    Enable = 'Enable',
+    Disable = 'Disable'
+}  

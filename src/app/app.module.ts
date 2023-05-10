@@ -30,6 +30,8 @@ const routes: Routes = [
   { path: 'view_staffs', component: StaffListComponent },
   { path: 'approve_beneficiary', component: BeneficiaryListComponent },
   { path: 'staff_login', component: StaffloginComponent  },
+  { path: 'staff_panel', component: StaffPanelComponent  },
+  
 ];
 
 
