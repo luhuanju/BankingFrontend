@@ -1,0 +1,34 @@
+<form class="post-form" [formGroup]="payloadFrom" (ngSubmit)="post()">
+    <table class = "account-list">
+        <thead>
+        <tr>
+            <th>Ac No</th>
+            <th>Balance</th>
+            <th>Ac Type</th>
+            <th>Select</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of accountList">
+            <td>{{ item.accNo }}</td>
+            <td>{{ item.Balance }}</td>
+            <td>{{ item.accType }}</td>
+            <td>            
+                <input type="radio" [checked]="item.accNo === selectedAccount" (change)="selectItem(item.accNo)">
+            </td>
+        </tr>
+        </tbody>
+  </table>
+  <div class="select-line">
+    <label for="choice">Select To Account </label><br>
+    <select id="choice" name="choice" [(ngModel)]="choice">
+      <option value="Beneficiary1">Beneficiary1</option>
+      <option value="Beneficiary2">Beneficiary2</option>
+    </select>
+    <input type="text" [(ngModel)]="textInput" placeholder="Enter Amount">
+  </div>
+  <input type="text" [(ngModel)]="textInput" placeholder="Reason" class="custom-input">
+  <br/>
+  <button type="submit" class="submit-button">Submit</button>
+
+</form>

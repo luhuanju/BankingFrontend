@@ -1,0 +1,15 @@
+.custom-input {
+    width: 200px;
+    height: 100px;
+  }
+
+.account-list{
+    border-collapse: collapse;
+    width: 100%;  
+  }
+
+.account-list th, .account-list td{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;  
+}
