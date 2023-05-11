@@ -20,6 +20,8 @@
             (changeSelectedValue)="onSelectedValueChange($event)"></app-add-beneficiary>
             <app-delete-beneficiary *ngIf="selectedValue === 'Remove Beneficiary'"
             ></app-delete-beneficiary>
+            <app-transfer-money *ngIf="selectedValue === 'Transfer Money'"></app-transfer-money>
+            <app-view-statement *ngIf="selectedValue === 'View Statement'"></app-view-statement>
           </div>
     </div>
   </div>  

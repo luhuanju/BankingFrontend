@@ -24,6 +24,10 @@ import { BlockEnableCustomerComponent } from './block-enable-customer/block-enab
 import { ApproveAccountComponent } from './approve-account/approve-account.component';
 import { StaffStamentsComponent } from './staff-staments/staff-staments.component';
 
+import { TransferMoneyComponent } from './transfer-money/transfer-money.component';
+import { ViewStatementComponent } from './view-statement/view-statement.component';
+
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -58,6 +62,8 @@ const routes: Routes = [
     BlockEnableCustomerComponent,
     ApproveAccountComponent,
     StaffStamentsComponent,
+    TransferMoneyComponent,
+    ViewStatementComponent,
   ],
   imports: [
     ReactiveFormsModule,
