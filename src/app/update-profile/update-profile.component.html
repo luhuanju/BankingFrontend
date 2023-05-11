@@ -1,0 +1,35 @@
+<form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+    <label for="customerId">Customer ID:</label>
+    <input type="text" id="customerId" formControlName="customerId" [disabled]="true">
+  
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" formControlName="fullName">
+  
+    <label for="phone">Phone:</label>
+    <input type="text" id="phone" formControlName="phone">
+  
+    <label for="pan">PAN:</label>
+    <input type="text" id="pan" formControlName="pan">
+  
+    <label for="aadhar">AADHAR:</label>
+    <input type="text" id="aadhar" formControlName="aadhar">
+  
+    <label for="panAttachment">PAN Attachment:</label>
+    <input type="file" id="panAttachment" (change)="onPanAttachmentChange($event)">
+  
+    <label for="aadharAttachment">AADHAR Attachment:</label>
+    <input type="file" id="aadharAttachment" (change)="onAadharAttachmentChange($event)">
+  
+    <label for="securityQuestion">Select Security Question:</label>
+    <select id="securityQuestion" formControlName="securityQuestion">
+      <option value="question1">Question 1</option>
+      <option value="question2">Question 2</option>
+      <!-- Add more options as needed -->
+    </select>
+  
+    <label for="securityAnswer">Security Answer:</label>
+    <input type="text" id="securityAnswer" formControlName="securityAnswer">
+  
+    <button type="submit">Update</button>
+  </form>
+  

@@ -26,6 +26,7 @@ import { StaffStamentsComponent } from './staff-staments/staff-staments.componen
 
 import { TransferMoneyComponent } from './transfer-money/transfer-money.component';
 import { ViewStatementComponent } from './view-statement/view-statement.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 
 
 const routes: Routes = [
@@ -64,6 +65,7 @@ const routes: Routes = [
     StaffStamentsComponent,
     TransferMoneyComponent,
     ViewStatementComponent,
+    UpdateProfileComponent,
   ],
   imports: [
     ReactiveFormsModule,

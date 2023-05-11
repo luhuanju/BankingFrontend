@@ -16,6 +16,7 @@ export class ProfilePanelComponent {
     { value: 'Remove Beneficiary', label: 'Remove Beneficiary' },
     { value: 'Transfer Money', label: 'Transfer Money' },
     { value: 'View Statement', label: 'View Statement' },
+    { value: 'Update Profile', label: 'Update Profile' },
 
   ];
   selectedValue: string | null = 'Account List';
