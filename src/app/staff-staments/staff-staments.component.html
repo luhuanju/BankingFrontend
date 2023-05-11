@@ -1,0 +1,30 @@
+<button (click)="openForm()">By Account Number</button>
+<div *ngIf="showForm">
+  <form (ngSubmit)="submitForm()">
+    <input type="text" [(ngModel)]="accountNumber" name="accountNumber" required>
+    <button type="submit">Go</button>
+  </form>
+</div>
+<div *ngIf="showTransactions">
+  <ng-container *ngIf="selectedAccount">
+    <h2>Transactions for Account {{ selectedAccount.accountNo }}</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Reference</th>
+          <th>Amount</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of selectedAccount.transaction">
+          <td>{{ transaction.date | date }}</td>
+          <td>{{ transaction.reference }}</td>
+          <td>{{ transaction.amount }}</td>
+          <td>{{ transaction.transactionType }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+</div>

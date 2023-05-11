@@ -22,8 +22,11 @@ import { StaffloginComponent } from './stafflogin/stafflogin.component';
 import { StaffPanelComponent } from './staff-panel/staff-panel.component';
 import { BlockEnableCustomerComponent } from './block-enable-customer/block-enable-customer.component';
 import { ApproveAccountComponent } from './approve-account/approve-account.component';
+import { StaffStamentsComponent } from './staff-staments/staff-staments.component';
+
 import { TransferMoneyComponent } from './transfer-money/transfer-money.component';
 import { ViewStatementComponent } from './view-statement/view-statement.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -34,7 +37,7 @@ const routes: Routes = [
   { path: 'approve_beneficiary', component: BeneficiaryListComponent },
   { path: 'staff_login', component: StaffloginComponent  },
   { path: 'staff_panel', component: StaffPanelComponent  },
-  
+  { path: 'staff_staments', component: StaffStamentsComponent  },
 ];
 
 
@@ -58,6 +61,7 @@ const routes: Routes = [
     StaffPanelComponent,
     BlockEnableCustomerComponent,
     ApproveAccountComponent,
+    StaffStamentsComponent,
     TransferMoneyComponent,
     ViewStatementComponent,
   ],
