@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserServiceService } from '../user-service.service';
+import { Payload } from '../CustomersAccount';
+import { TransferService } from './transfer/transfer.service';
 
 @Component({
   selector: 'app-transfer-money',
@@ -9,7 +11,10 @@ import { UserServiceService } from '../user-service.service';
   styleUrls: ['./transfer-money.component.css'],
 })
 export class TransferMoneyComponent {
-  constructor(private http: HttpClient, private router: Router, private userService: UserServiceService) {}
+
+  @Output() changeSelectedValue = new EventEmitter<string>();
+
+  constructor(private http: HttpClient, private router: Router, private userService: UserServiceService, private transferService: TransferService) {}
 
   // customerId: number = 9; // Replace with the actual customer ID
   customerId = this.userService.getCurrentUser()['customerId']
@@ -58,6 +63,17 @@ export class TransferMoneyComponent {
 
   submit() {
     if (this.fromAccount) {
+      const transferUrl = "http://localhost:8080/api/customer/transfer";
+      const payload = new Payload()
+      payload.fromAccNumber = this.fromAccount;
+      payload.toAccNumber = this.toAccount;
+      payload.amount = this.amount;
+      payload.reason = this.reason;
+      console.log("payload: ", payload)
+      this.transferService.putPayload(payload, transferUrl).subscribe((result) => {
+        this.changeSelectedValue.emit('Account List');
+      });
+
       console.log(
         'fromAccount : ',
         this.fromAccount,
