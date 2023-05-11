@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black
+  }  
+
+  div.pagination {
+    margin-top: 10px;
+  }
+  
+  div.pagination button {
+    margin-right: 5px;
+  }
+  
+  div.pagination span {
+    margin: 0 5px;
+  }
+  
