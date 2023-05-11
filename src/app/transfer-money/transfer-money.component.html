@@ -1,6 +1,6 @@
 <div>
   <div>
-    <!-- <form class="post-form" (ngSubmit)="post()"> -->
+    <div>
     <p>Select Source Account</p>
     <table class="account-list">
       <thead>
@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let account of accountList">
+        <tr *ngFor="let account of getDisplayedFromAccounts()">
           <td>{{ account.accountNumber }}</td>
           <td>{{ account.accountBalance }}</td>
           <td>{{ account.accountType }}</td>
@@ -27,7 +27,12 @@
         </tr>
       </tbody>
     </table>
-
+    <div>
+      <button [disabled]="currentPage == 1" (click)="goToPage(currentPage - 1)">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button [disabled]="currentPage == totalPages" (click)="goToPage(currentPage + 1)">Next</button>
+  </div>
+</div>
     <div class="select-line">
 
       <label for="toAccount">Select To Account </label><br />
