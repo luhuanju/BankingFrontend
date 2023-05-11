@@ -12,27 +12,32 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of accountList">
-          <td>{{ item.accNo }}</td>
-          <td>{{ item.Balance }}</td>
-          <td>{{ item.accType }}</td>
+        <tr *ngFor="let account of accountList">
+          <td>{{ account.accountNumber }}</td>
+          <td>{{ account.accountBalance }}</td>
+          <td>{{ account.accountType }}</td>
           <td>
             <input
               type="radio"
-              name="selectedAccount"
-              [(ngModel)]="selectedAccount"
-              [value]="item.accNo"
+              name="fromAccount"
+              [(ngModel)]="fromAccount"
+              [value]="account.accountNumber"
             />
           </td>
         </tr>
       </tbody>
     </table>
+
     <div class="select-line">
+
       <label for="toAccount">Select To Account </label><br />
-      <select id="toAccount" name="toAccount" [(ngModel)]="toAccount">
-        <option value="Beneficiary1">Beneficiary1</option>
-        <option value="Beneficiary2">Beneficiary2</option>
+
+      <select [(ngModel)]="toAccount">
+        <option *ngFor="let option of getOptions()" [value]="beneficiaryList[option].accountNumber">
+          {{ beneficiaryList[option].accountNumber }}
+        </option>
       </select>
+
       <input type="number" [(ngModel)]="amount" placeholder="Enter Amount" />
     </div>
     <input
