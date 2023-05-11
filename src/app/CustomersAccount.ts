@@ -32,3 +32,16 @@ export class BeneficiaryAccount {
   accountType: AccountType;
   approved:string;
 }
+
+export class Payload {
+  // constructor(
+  //   public fromAccNumber: number,
+  //   public toAccNumber: number,
+  //   public amount: number,
+  //   public reason: string
+  // ) {}
+  fromAccNumber: any;
+  toAccNumber: any;
+  amount: any;
+  reason: any;
+}
