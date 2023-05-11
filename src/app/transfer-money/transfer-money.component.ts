@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserServiceService } from '../user-service.service';
-import { Payload } from '../CustomersAccount';
+import { CustomerAccount, Payload } from '../CustomersAccount';
 import { TransferService } from './transfer/transfer.service';
 
 @Component({
@@ -27,6 +27,10 @@ export class TransferMoneyComponent {
   accountList: any[];
   beneficiaryList: any[];
   
+  currentPage: number = 1;
+  pageSize: number = 4;  
+  totalPages: number;
+
   ngOnInit() {
 
     console.log("customerId: ", this.customerId)
@@ -35,6 +39,7 @@ export class TransferMoneyComponent {
     this.http.get<any[]>(url).subscribe(
       (data) => {
         this.accountList = data;
+        this.totalPages = Math.ceil(this.accountList.length / this.pageSize)
         // console.log('this is accounts:', this.accountList);
       },
       (error) => {
@@ -87,6 +92,16 @@ export class TransferMoneyComponent {
     }
   }
 
-
+  getDisplayedFromAccounts() {
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = startIndex + this.pageSize;
+    return this.accountList.slice(startIndex, endIndex);
+  }
   
+  goToPage(pageNumber: number){
+    if (pageNumber >= 1 && pageNumber <= this.totalPages) {
+      this.currentPage = pageNumber;
+    }
+  }
+
 }
