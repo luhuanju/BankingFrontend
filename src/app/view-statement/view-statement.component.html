@@ -1,43 +1,48 @@
 <h2>Account Statements</h2>
 <div>
-    <div class="select-line">
-        <label for="choice">Select Your Account </label><br>
-        <select id="choice" name="choice" [(ngModel)]="choice">
-            <option *ngFor="let option of getAccNo()" [value]="accountList[option].accountNumber">
-                {{ accountList[option].accountNumber }}
-        </select>
-        <button type="submit" (click)="submitAccNo()" class="submit-button">Submit</button>
-    </div>
+  <div class="select-line">
+    <label for="choice">Select Your Account </label><br />
+    <select id="choice" name="choice" [(ngModel)]="choice">
+      <option
+        *ngFor="let option of getAccNo()"
+        [value]="accountList[option].accountNumber"
+      >
+        {{ accountList[option].accountNumber }}
+      </option>
+    </select>
 
-    <div>
-        <p>AC No: {{choice}} ||| Balance: {{balance}}</p>
-    </div>
+    <button type="submit" (click)="submitAccNo()" class="submit-button">
+      Submit
+    </button>
+  </div>
 
-    <p>transaction details</p>
+  <div>
+    <p>AC No: {{ choice }} ||| Balance: {{ balance }}</p>
+  </div>
 
-    <div>
-        <table>
-            <thead>
-                <tr>
-                    <th colspan=4>Account Details</th>
-                </tr>
-                <tr>
-                    <th>Date</th>
-                    <th>Reference</th>
-                    <th>Amount</th>
-                    <th>Cr/Db</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let trans of transactionList">
-                    <td>{{ trans.date }}</td>
-                    <td>{{ trans.reference }}</td>
-                    <td>{{ trans.amount }}</td>
-                    <td>{{ trans.dbcr }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+  <p>transaction details</p>
 
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="4">Account Details</th>
+        </tr>
+        <tr>
+          <th>Date</th>
+          <th>Reference</th>
+          <th>Amount</th>
+          <th>Cr/Db</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let trans of transactionList">
+          <td>{{ trans.date }}</td>
+          <td>{{ trans.reference }}</td>
+          <td>{{ trans.amount }}</td>
+          <td>{{ trans.dbcr }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-
