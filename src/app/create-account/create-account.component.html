@@ -1,8 +1,6 @@
-
 <div class="border">
-    <div class="text-line">Create Account Form</div>
     <form (ngSubmit)="onSubmit()">
-      <input type="number" [(ngModel)]="number" name="number" required>
+      <!-- <input type="number" [(ngModel)]="number" name="number" required>
       <div *ngIf="number === 0 || number === null" class="error">Please enter a number</div>
       <div class="account-line">Select Type Of Account</div>
       <div class="select-line">
@@ -12,6 +10,31 @@
           <option value="SB">Savings Bank</option>
         </select>
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit">Submit</button> -->
+
+
+      <div class="container">
+        <h1 class="title">Please enter a number</h1>
+        <input type="number" [(ngModel)]="number" name="number">
+        <h2 class="subtitle">Select Type Of Account</h2>
+        <select class="select">
+          <option value="CA">Current Account</option>
+          <option value="SB">Savings Bank</option>
+        </select>
+        <button type="submit">Submit</button>
+      </div>
+
+
     </form>
   </div>
+  <!-- <div class="container">
+    <h1 class="title">Create Account Form</h1>
+    <input type="number" class="number-input">
+    <h2 class="subtitle">Select Type Of Account</h2>
+    <select class="select">
+      <option value="CA">Current Account</option>
+      <option value="SB">Savings Bank</option>
+    </select>
+    <button class="button">Click me</button>
+  </div>
+   -->

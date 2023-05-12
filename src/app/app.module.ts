@@ -32,6 +32,8 @@ const routes: Routes = [
   { path: 'approve_beneficiary', component: BeneficiaryListComponent },
   { path: 'staff_login', component: StaffloginComponent  },
   { path: 'staff_panel', component: StaffPanelComponent  },
+  { path: 'staff_list', component: StaffListComponent  },
+
   
 ];
 
