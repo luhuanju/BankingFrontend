@@ -29,7 +29,7 @@ export class AddBeneficiaryComponent {
     const beneficiaries= new BeneficiaryAccount()
     beneficiaries.accountNumber=this.accountNumber 
     beneficiaries.accountType=this.paymentMethod==='CA'?AccountType.CA: AccountType.SB
-    beneficiaries.approved='Yes'
+    beneficiaries.approved='No'
     beneficiaries.customerId=this.customerId
 
     this.http.post(this.apiUrl,beneficiaries).subscribe((result) => {
