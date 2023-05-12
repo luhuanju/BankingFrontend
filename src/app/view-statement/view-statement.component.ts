@@ -14,7 +14,7 @@ export class ViewStatementComponent {
   pageSize: number = 3;
   totalPages: number;
   
-  balance: number = 10000000;
+  balance: number;
   
   constructor(private http: HttpClient, private router: Router, private userService: UserServiceService) {
   }
