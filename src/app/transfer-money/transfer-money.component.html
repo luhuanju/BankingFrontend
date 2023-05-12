@@ -1,0 +1,60 @@
+<div>
+  <div>
+    <div>
+    <p>Select Source Account</p>
+    <table class="account-list">
+      <thead>
+        <tr>
+          <th>Ac No</th>
+          <th>Balance</th>
+          <th>Ac Type</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let account of getDisplayedFromAccounts()">
+          <td>{{ account.accountNumber }}</td>
+          <td>{{ account.accountBalance }}</td>
+          <td>{{ account.accountType }}</td>
+          <td>
+            <input
+              type="radio"
+              name="fromAccount"
+              [(ngModel)]="fromAccount"
+              [value]="account.accountNumber"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button [disabled]="currentPage == 1" (click)="goToPage(currentPage - 1)">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button [disabled]="currentPage == totalPages" (click)="goToPage(currentPage + 1)">Next</button>
+  </div>
+</div>
+    <div class="select-line">
+
+      <label for="toAccount">Select To Account </label><br />
+
+      <select [(ngModel)]="toAccount">
+        <option *ngFor="let option of getOptions()" [value]="beneficiaryList[option].accountNumber">
+          {{ beneficiaryList[option].accountNumber }}
+        </option>
+      </select>
+
+      <input type="number" [(ngModel)]="amount" placeholder="Enter Amount" />
+    </div>
+    <input
+      type="text"
+      [(ngModel)]="reason"
+      placeholder="Reason"
+      class="custom-input"
+    />
+    <br />
+    <button type="submit" (click)="submit()" class="submit-button">
+      Submit
+    </button>
+    <!-- </form> -->
+  </div>
+</div>

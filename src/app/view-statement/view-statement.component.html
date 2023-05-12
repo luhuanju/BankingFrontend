@@ -1,0 +1,43 @@
+<h2>sample Users</h2>
+    <div class="select-line">
+        <label for="choice">Select Your Account </label><br>
+        <select id="choice" name="choice" [(ngModel)]="choice">
+            <option *ngFor="let option of getAccNo()" [value]="accountList[option].accountNumber">
+                {{ accountList[option].accountNumber }}
+        </select>
+        <button type="submit" (click)="submitAccNo()" class="submit-button">Submit</button>
+    </div>
+<div>
+    <div>
+        <p>AC No: {{choice}}  Balance: {{balance}}</p>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan=4>Account Details</th>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <th>Reference</th>
+                    <th>Amount</th>
+                    <th>Cr/Db</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of getDisplayedUsers()">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.phone }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <button [disabled]="currentPage == 1" (click)="goToPage(currentPage - 1)">Previous</button>
+        <span>Page {{ currentPage }} of {{ totalPages }}</span>
+        <button [disabled]="currentPage == totalPages" (click)="goToPage(currentPage + 1)">Next</button>
+    </div>
+
+</div>
