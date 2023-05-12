@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Staff } from './staff.model';
 import { AdminService } from './admin.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-staff-create',
@@ -12,7 +13,7 @@ export class StaffCreateComponent implements OnInit {
 
   staffForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private adminService: AdminService) { }
+  constructor(private fb: FormBuilder,private router: Router,private adminService: AdminService) { }
 
   ngOnInit(): void {
     this.staffForm = this.fb.group({
@@ -31,6 +32,7 @@ export class StaffCreateComponent implements OnInit {
     };
     this.adminService.createStaff(staff).subscribe(res => {
       console.log(res);
+      this.router.navigate(['staff_list']);
       // show success message
     }, error => {
       console.log(error);
