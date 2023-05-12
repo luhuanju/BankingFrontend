@@ -1,18 +1,15 @@
 <h2>sample Users</h2>
-<!-- <form class="post-form" [formGroup]="payloadFrom" (ngSubmit)="post()"> -->
     <div class="select-line">
         <label for="choice">Select Your Account </label><br>
         <select id="choice" name="choice" [(ngModel)]="choice">
-            <option value="Account1">Account1</option>
-            <option value="Account2">Account2</option>
+            <option *ngFor="let option of getAccNo()" [value]="accountList[option].accountNumber">
+                {{ accountList[option].accountNumber }}
         </select>
-        <button type="submit" class="submit-button">Submit</button>
+        <button type="submit" (click)="submitAccNo()" class="submit-button">Submit</button>
     </div>
-<!-- </form> -->
-
 <div>
     <div>
-        <p>AC No: {{accountNo}}  Balance: {{balance}}</p>
+        <p>AC No: {{choice}}  Balance: {{balance}}</p>
     </div>
     <div>
         <table>
@@ -44,4 +41,3 @@
     </div>
 
 </div>
-

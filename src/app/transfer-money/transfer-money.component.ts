@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserServiceService } from '../user-service.service';
-import { CustomerAccount, Payload } from '../CustomersAccount';
+import { Payload } from '../CustomersAccount';
 import { TransferService } from './transfer/transfer.service';
 
 @Component({
@@ -16,7 +16,6 @@ export class TransferMoneyComponent {
 
   constructor(private http: HttpClient, private router: Router, private userService: UserServiceService, private transferService: TransferService) {}
 
-  // customerId: number = 9; // Replace with the actual customer ID
   customerId = this.userService.getCurrentUser()['customerId']
 
   fromAccount: any;
