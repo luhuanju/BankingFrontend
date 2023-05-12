@@ -2,6 +2,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserServiceService } from '../user-service.service';
+
 @Component({
   selector: 'app-update-profile',
   templateUrl: './update-profile.component.html',
@@ -9,8 +11,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class UpdateProfileComponent {
   profileForm: FormGroup;
-  customerID = '123'; // Replace with the actual customer ID
-  constructor(private formBuilder: FormBuilder,private http: HttpClient) {}
+  constructor(private formBuilder: FormBuilder,private http: HttpClient, private userService: UserServiceService) {}
+  customerID: number = this.userService.getCurrentUser()['customerId']; // Replace with the actual customer ID
+
+
   ngOnInit() {
     this.profileForm = this.formBuilder.group({
       customerId: [{ value: this.customerID, disabled: true }],
