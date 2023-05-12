@@ -15,7 +15,9 @@
             
             <app-account-list *ngIf="selectedValue === 'Account List'"></app-account-list>
             <app-create-account *ngIf="selectedValue === 'Create Account'"
-            (changeSelectedValue)="onSelectedValueChange($event)"></app-create-account>
+           ></app-create-account>
+            <!-- <app-create-account *ngIf="selectedValue === 'Create Account'"
+            (changeSelectedValue)="onSelectedValueChange($event)"></app-create-account> -->
             <app-add-beneficiary *ngIf="selectedValue === 'Add Beneficiary'"
             (changeSelectedValue)="onSelectedValueChange($event)"></app-add-beneficiary>
             <app-delete-beneficiary *ngIf="selectedValue === 'Remove Beneficiary'"

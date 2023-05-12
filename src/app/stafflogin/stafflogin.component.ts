@@ -15,6 +15,8 @@ export class StaffloginComponent implements OnInit  {
 
   showMessage=false;
   mainbody=true;
+  paragraphText: string = "Account information not found!";
+
 
   ngOnInit(): void {}
   constructor(private router: Router, private http: HttpClient, private userService: UserServiceService) {}
@@ -36,9 +38,16 @@ export class StaffloginComponent implements OnInit  {
     this.staff.staffPassword = this.f['password'].value ?? '';
    
     this.http.post<HttpResponse<any>>(this.apiUrl,this.staff).subscribe((result) => {
-      if(result==null){
+      if(result==null || result['status']===1 ){
+        this.paragraphText='Account information not found!'
         this.showMessage=true;
-      }else{
+      }
+      // if(result['status']==1){
+      //   this.showMessage=true;
+      //   this.paragraphText='This account is in Disabled'
+      // }
+      else{
+        console.log(result)
         this.userService.setCurrentStaff(result)
         this.router.navigate(['staff_panel']);
       } 

@@ -6,7 +6,7 @@ export class Staff {
     staffPassword:string;
     stuffAddedDate:Date;
 }
-export enum SatffStatus {
+ export  enum SatffStatus {
     ENABLED = 'ENABLED',
     DISABLED = 'DISABLED'
 }  
