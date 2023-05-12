@@ -1,4 +1,5 @@
-<h2>sample Users</h2>
+<h2>Account Statements</h2>
+<div>
     <div class="select-line">
         <label for="choice">Select Your Account </label><br>
         <select id="choice" name="choice" [(ngModel)]="choice">
@@ -7,11 +8,14 @@
         </select>
         <button type="submit" (click)="submitAccNo()" class="submit-button">Submit</button>
     </div>
-<div>
+
     <div>
         <p>AC No: {{choice}}  Balance: {{balance}}</p>
+        <p>{{transactionList}}</p>
     </div>
-    <div>
+
+    <p>transaction details</p>
+    <!-- <div>
         <table>
             <thead>
                 <tr>
@@ -25,19 +29,15 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let user of getDisplayedUsers()">
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.phone }}</td>
+                <tr *ngFor="let trans of showAccount[-1]">
+                    <td>{{ trans.date }}</td>
+                    <td>{{ trans.reference }}</td>
+                    <td>{{ trans.amount }}</td>
+                    <td>{{ trans.dbcr }}</td>
                 </tr>
             </tbody>
         </table>
-    </div>
-    <div>
-        <button [disabled]="currentPage == 1" (click)="goToPage(currentPage - 1)">Previous</button>
-        <span>Page {{ currentPage }} of {{ totalPages }}</span>
-        <button [disabled]="currentPage == totalPages" (click)="goToPage(currentPage + 1)">Next</button>
-    </div>
+    </div> -->
 
 </div>
+
