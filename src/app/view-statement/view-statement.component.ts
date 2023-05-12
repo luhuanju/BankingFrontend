@@ -14,7 +14,6 @@ export class ViewStatementComponent {
   pageSize: number = 3;
   totalPages: number;
   
-  textInput: string;
   balance: number = 10000000;
   
   constructor(private http: HttpClient, private router: Router, private userService: UserServiceService) {
@@ -44,13 +43,6 @@ export class ViewStatementComponent {
       }
     );
 
-    // console.log("This is choice, ", this.choice)
-    // const getTransurl = `http://localhost:8080/api/customer/${this.customerId}/account/${this.choice}`;
-    // this.http.get<any[]>(getTransurl).subscribe(
-    //   (data) => {
-    //     this.showAccount = data;
-    //     console.log("this.showAccount", this.showAccount)
-    //   });
   }
 
   submitAccNo(){

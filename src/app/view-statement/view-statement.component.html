@@ -11,11 +11,11 @@
 
     <div>
         <p>AC No: {{choice}}  Balance: {{balance}}</p>
-        <p>{{transactionList}}</p>
     </div>
 
     <p>transaction details</p>
-    <!-- <div>
+
+    <div>
         <table>
             <thead>
                 <tr>
@@ -29,7 +29,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let trans of showAccount[-1]">
+                <tr *ngFor="let trans of transactionList">
                     <td>{{ trans.date }}</td>
                     <td>{{ trans.reference }}</td>
                     <td>{{ trans.amount }}</td>
@@ -37,7 +37,7 @@
                 </tr>
             </tbody>
         </table>
-    </div> -->
+    </div>
 
 </div>
 
