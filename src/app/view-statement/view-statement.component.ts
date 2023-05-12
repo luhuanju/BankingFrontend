@@ -3,13 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserServiceService } from '../user-service.service';
 
-interface User {
-  id: number;
-  name: string;
-  email: string;
-  phone: string;
-}
-
 @Component({
   selector: 'app-view-statement',
   templateUrl: './view-statement.component.html',
@@ -17,67 +10,83 @@ interface User {
 })
 export class ViewStatementComponent {
 
-  users: User[];
-  currentPage: number;
-  pageSize: number;
+  currentPage: number = 1;
+  pageSize: number = 3;
   totalPages: number;
   
   textInput: string;
   balance: number = 10000000;
   
   constructor(private http: HttpClient, private router: Router, private userService: UserServiceService) {
-
-    this.users = [
-      { id: 1, name: 'John Doe', email: 'john.doe@example.com', phone: '123-456-7890' },
-      { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com', phone: '123-456-7890' },
-      { id: 3, name: 'Bob Johnson', email: 'bob.johnson@example.com', phone: '123-456-7890' },
-      { id: 4, name: 'Alice Davis', email: 'alice.davis@example.com', phone: '123-456-7890' },
-      { id: 5, name: 'Tom Wilson', email: 'tom.wilson@example.com', phone: '123-456-7890' },
-      { id: 6, name: 'Mary Brown', email: 'mary.brown@example.com', phone: '123-456-7890' },
-      { id: 7, name: 'Alice Brown', email: 'mary.brown@example.com', phone: '123-456-7890' },
-      { id: 8, name: 'Jane Bob', email: 'mary.brown@example.com', phone: '123-456-7890' },
-      { id: 9, name: 'Bob Smith', email: 'mary.brown@example.com', phone: '123-456-7890' }
-    ];
-
-    this.currentPage = 1;
-    this.pageSize = 3;
-    this.totalPages = Math.ceil(this.users.length / this.pageSize);
   }
 
   // set <select> accountList
-  choice: string;
+  choice: number;
   customerId = this.userService.getCurrentUser()['customerId']
   accountList: any[];
+  showAccount: any;
+  // set transaction list table
+  transactionList: any;
 
   // get accountList
   ngOnInit() {
+
     const getAccurl = `http://localhost:8080/api/customer/${this.customerId}/acocunt`;
     this.http.get<any[]>(getAccurl).subscribe(
       (data) => {
         this.accountList = data;
-        console.log('this is accounts:', this.accountList);
+        console.log('this is accounts:', this.accountList,
+          'this is transaction', this.accountList[-1].transaction
+        );
       },
       (error) => {
         console.log('Error occurred while fetching user data:', error);
       }
     );
+
+    // console.log("This is choice, ", this.choice)
+    // const getTransurl = `http://localhost:8080/api/customer/${this.customerId}/account/${this.choice}`;
+    // this.http.get<any[]>(getTransurl).subscribe(
+    //   (data) => {
+    //     this.showAccount = data;
+    //     console.log("this.showAccount", this.showAccount)
+    //   });
   }
 
   submitAccNo(){
     console.log("choice", this.choice)
-  }
 
+    const getTransurl = `http://localhost:8080/api/customer/${this.customerId}/account/${this.choice}`;
+    this.http.get<any[]>(getTransurl).subscribe(
+      (data) => {
+        this.showAccount = data;
+        console.log("***choice", this.choice);
+        console.log("this.showAccount", this.showAccount);
+        this.transactionList = this.showAccount.transaction;
+        this.balance = this.showAccount.accountBalance;
+        console.log("****", this.transactionList);
+      });
+
+  }
+  
   getAccNo(){
     return Array.from({ length: this.accountList.length }, (_, index) => index);
   }
   
-  getDisplayedUsers() {
+
+  // get transaction list
+  getDisplayedTrans(){
+
     const startIndex = (this.currentPage - 1) * this.pageSize;
     const endIndex = startIndex + this.pageSize;
-    return this.users.slice(startIndex, endIndex);
-  }
+    console.log("This is **trans: ", this.transactionList)
+    return this.transactionList.slice(startIndex, endIndex);
 
+  }
+  
   goToPage(pageNumber: number) {
+    this.totalPages = Math.ceil(this.transactionList.length / this.pageSize);
+
     if (pageNumber >= 1 && pageNumber <= this.totalPages) {
       this.currentPage = pageNumber;
     }
